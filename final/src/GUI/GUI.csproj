@@ -1,0 +1,696 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A03608C8-3F34-4EEC-9024-B8087B0CB698}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FinalProject</RootNamespace>
+    <AssemblyName>FinalProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.102.1.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.102.1\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Docking">
+      <HintPath>..\..\..\..\..\..\Krypton\Bin\ComponentFactory.Krypton.Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Navigator">
+      <HintPath>..\..\..\..\..\..\Krypton\Bin\ComponentFactory.Krypton.Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Ribbon">
+      <HintPath>..\..\..\..\..\..\Krypton\Bin\ComponentFactory.Krypton.Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Toolkit">
+      <HintPath>..\..\..\..\..\..\Krypton\Bin\ComponentFactory.Krypton.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="ComponentFactory.Krypton.Workspace">
+      <HintPath>..\..\..\..\..\..\Krypton\Bin\ComponentFactory.Krypton.Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.16.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.16.0\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=7.0.2.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.7.0.2\lib\net462\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.Interfaces, Version=6.1.1.0, Culture=neutral, PublicKeyToken=a694d7f3b0907a61, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.Interfaces.6.1.1\lib\net462\EPPlus.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus.System.Drawing, Version=6.1.1.0, Culture=neutral, PublicKeyToken=2308d35469c9bac0, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.System.Drawing.6.1.1\lib\net462\EPPlus.System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Irony, Version=1.0.11.0, Culture=neutral, PublicKeyToken=ca48ace7223ead47, processorArchitecture=MSIL">
+      <HintPath>..\packages\Irony.NetCore.1.0.11\lib\net461\Irony.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net46\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.6.0.0\lib\net461\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="XLParser, Version=1.5.2.0, Culture=neutral, PublicKeyToken=63397e1e46bb91b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\XLParser.1.5.2\lib\net461\XLParser.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App\Admin\AdminHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\AdminHome.Designer.cs">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyGiangVien\UC_QuanLyGiangVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyGiangVien\UC_QuanLyGiangVien.Designer.cs">
+      <DependentUpon>UC_QuanLyGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyKhaoSat\UC_KhaoSat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyKhaoSat\UC_KhaoSat.Designer.cs">
+      <DependentUpon>UC_KhaoSat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyKhaoSat\UC_QuanLyKhaoSat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyKhaoSat\UC_QuanLyKhaoSat.Designer.cs">
+      <DependentUpon>UC_QuanLyKhaoSat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyLichThi\UC_QuanLyLichThi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyLichThi\UC_QuanLyLichThi.Designer.cs">
+      <DependentUpon>UC_QuanLyLichThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyMonHoc\UC_QuanLyMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyMonHoc\UC_QuanLyMonHoc.Designer.cs">
+      <DependentUpon>UC_QuanLyMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLySuKien\UC_QuanLySuKien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLySuKien\UC_QuanLySuKien.Designer.cs">
+      <DependentUpon>UC_QuanLySuKien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyThongBao\UC_QuanLyThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLyThongBao\UC_QuanLyThongBao.Designer.cs">
+      <DependentUpon>UC_QuanLyThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\ThemNguoiDung\EditGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\ThemNguoiDung\EditGiangVien.Designer.cs">
+      <DependentUpon>EditGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\ThemNguoiDung\EditSinhVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Admin\ThemNguoiDung\EditSinhVien.Designer.cs">
+      <DependentUpon>EditSinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLySinhVien\UC_NhapDiemRenLuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLySinhVien\UC_NhapDiemRenLuyen.Designer.cs">
+      <DependentUpon>UC_NhapDiemRenLuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\QuanLySinhVien\UC_QuanLySinhVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\QuanLySinhVien\UC_QuanLySinhVien.Designer.cs">
+      <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Admin\ThongKe\UC_ThongKe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Admin\ThongKe\UC_ThongKe.Designer.cs">
+      <DependentUpon>UC_ThongKe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\GiangVien\DiemDanh\UC_DiemDanh.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\GiangVien\DiemDanh\UC_DiemDanh.Designer.cs">
+      <DependentUpon>UC_DiemDanh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\GiangVien\HomeGiangVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\GiangVien\HomeGiangVien.Designer.cs">
+      <DependentUpon>HomeGiangVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\GiangVien\NhapDiem\UC_NhapDiem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\GiangVien\NhapDiem\UC_NhapDiem.Designer.cs">
+      <DependentUpon>UC_NhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\DangKyMonHoc\XacNhanDangKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\DangKyMonHoc\XacNhanDangKy.Designer.cs">
+      <DependentUpon>XacNhanDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\DangKyMonHoc\UC_DangKyMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\DangKyMonHoc\UC_DangKyMonHoc.Designer.cs">
+      <DependentUpon>UC_DangKyMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\DangXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\DangXuat.Designer.cs">
+      <DependentUpon>DangXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\HocPhi\ThanhToanHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\HocPhi\ThanhToanHocPhi.Designer.cs">
+      <DependentUpon>ThanhToanHocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\HocPhi\UC_HocPhi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\HocPhi\UC_HocPhi.Designer.cs">
+      <DependentUpon>UC_HocPhi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\HocVu\UC_HocVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\HocVu\UC_HocVu.Designer.cs">
+      <DependentUpon>UC_HocVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\KhaoSatMonHoc\ChiTietKhaoSat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\KhaoSatMonHoc\ChiTietKhaoSat.Designer.cs">
+      <DependentUpon>ChiTietKhaoSat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\KhaoSatMonHoc\UC_KhaoSatMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\KhaoSatMonHoc\UC_KhaoSatMonHoc.Designer.cs">
+      <DependentUpon>UC_KhaoSatMonHoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\LichThi\UC_LichThi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\LichThi\UC_LichThi.Designer.cs">
+      <DependentUpon>UC_LichThi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\LichThi\UC_LichThi_CuoiKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\LichThi\UC_LichThi_CuoiKy.Designer.cs">
+      <DependentUpon>UC_LichThi_CuoiKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\LichThi\UC_LichThi_GiuaKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\LichThi\UC_LichThi_GiuaKy.Designer.cs">
+      <DependentUpon>UC_LichThi_GiuaKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\MonHocDangKy\UC_MonHocDaDangKy.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\MonHocDangKy\UC_MonHocDaDangKy.Designer.cs">
+      <DependentUpon>UC_MonHocDaDangKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_Item.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_Item.Designer.cs">
+      <DependentUpon>UC_Item.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_ThoiKhoaBieu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_ThoiKhoaBieu.Designer.cs">
+      <DependentUpon>UC_ThoiKhoaBieu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_TKBChiTiet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_TKBChiTiet.Designer.cs">
+      <DependentUpon>UC_TKBChiTiet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_TKBTongQuat.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThoiKhoaBieu\UC_TKBTongQuat.Designer.cs">
+      <DependentUpon>UC_TKBTongQuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\ChiTietThongBao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\ChiTietThongBao.Designer.cs">
+      <DependentUpon>ChiTietThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongTinSinhVien\DoiMatKhau.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongTinSinhVien\DoiMatKhau.Designer.cs">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\Diem\UC_Diem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\Diem\UC_Diem.Designer.cs">
+      <DependentUpon>UC_Diem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\UC_ThongBao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongBao\UC_ThongBao.Designer.cs">
+      <DependentUpon>UC_ThongBao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App\Main\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\DiemRenLuyen\UC_DiemRenLuyen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\DiemRenLuyen\UC_DiemRenLuyen.Designer.cs">
+      <DependentUpon>UC_DiemRenLuyen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="App\Main\ThongTinSinhVien\UC_InfoUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App\Main\ThongTinSinhVien\UC_InfoUser.Designer.cs">
+      <DependentUpon>UC_InfoUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLHTTTSV_TDTDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHTTTSV_TDTDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="QLHTTTSV_TDT_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHTTTSV_TDT_DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="App\Admin\AdminHome.resx">
+      <DependentUpon>AdminHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLyGiangVien\UC_QuanLyGiangVien.resx">
+      <DependentUpon>UC_QuanLyGiangVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLyKhaoSat\UC_KhaoSat.resx">
+      <DependentUpon>UC_KhaoSat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLyKhaoSat\UC_QuanLyKhaoSat.resx">
+      <DependentUpon>UC_QuanLyKhaoSat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLyLichThi\UC_QuanLyLichThi.resx">
+      <DependentUpon>UC_QuanLyLichThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLyMonHoc\UC_QuanLyMonHoc.resx">
+      <DependentUpon>UC_QuanLyMonHoc.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLySuKien\UC_QuanLySuKien.resx">
+      <DependentUpon>UC_QuanLySuKien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLyThongBao\UC_QuanLyThongBao.resx">
+      <DependentUpon>UC_QuanLyThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\ThemNguoiDung\EditGiangVien.resx">
+      <DependentUpon>EditGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\ThemNguoiDung\EditSinhVien.resx">
+      <DependentUpon>EditSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLySinhVien\UC_NhapDiemRenLuyen.resx">
+      <DependentUpon>UC_NhapDiemRenLuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\QuanLySinhVien\UC_QuanLySinhVien.resx">
+      <DependentUpon>UC_QuanLySinhVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Admin\ThongKe\UC_ThongKe.resx">
+      <DependentUpon>UC_ThongKe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\GiangVien\DiemDanh\UC_DiemDanh.resx">
+      <DependentUpon>UC_DiemDanh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\GiangVien\HomeGiangVien.resx">
+      <DependentUpon>HomeGiangVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\GiangVien\NhapDiem\UC_NhapDiem.resx">
+      <DependentUpon>UC_NhapDiem.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\DangKyMonHoc\UC_DangKyMonHoc.resx">
+      <DependentUpon>UC_DangKyMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\DangKyMonHoc\XacNhanDangKy.resx">
+      <DependentUpon>XacNhanDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\DangXuat.resx">
+      <DependentUpon>DangXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\HocPhi\ThanhToanHocPhi.resx">
+      <DependentUpon>ThanhToanHocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\HocPhi\UC_HocPhi.resx">
+      <DependentUpon>UC_HocPhi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\HocVu\UC_HocVu.resx">
+      <DependentUpon>UC_HocVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhaoSatMonHoc\ChiTietKhaoSat.resx">
+      <DependentUpon>ChiTietKhaoSat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\KhaoSatMonHoc\UC_KhaoSatMonHoc.resx">
+      <DependentUpon>UC_KhaoSatMonHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\LichThi\UC_LichThi.resx">
+      <DependentUpon>UC_LichThi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\LichThi\UC_LichThi_CuoiKy.resx">
+      <DependentUpon>UC_LichThi_CuoiKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\LichThi\UC_LichThi_GiuaKy.resx">
+      <DependentUpon>UC_LichThi_GiuaKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\MonHocDangKy\UC_MonHocDaDangKy.resx">
+      <DependentUpon>UC_MonHocDaDangKy.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThoiKhoaBieu\UC_Item.resx">
+      <DependentUpon>UC_Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThoiKhoaBieu\UC_ThoiKhoaBieu.resx">
+      <DependentUpon>UC_ThoiKhoaBieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThoiKhoaBieu\UC_TKBChiTiet.resx">
+      <DependentUpon>UC_TKBChiTiet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThoiKhoaBieu\UC_TKBTongQuat.resx">
+      <DependentUpon>UC_TKBTongQuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongBao\ChiTietThongBao.resx">
+      <DependentUpon>ChiTietThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongTinSinhVien\DoiMatKhau.resx">
+      <DependentUpon>DoiMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\Diem\UC_Diem.resx">
+      <DependentUpon>UC_Diem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongBao\UC_ThongBao.resx">
+      <DependentUpon>UC_ThongBao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\DiemRenLuyen\UC_DiemRenLuyen.resx">
+      <DependentUpon>UC_DiemRenLuyen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App\Main\ThongTinSinhVien\UC_InfoUser.resx">
+      <DependentUpon>UC_InfoUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="QLHTTTSV_TDTDataSet.xsc">
+      <DependentUpon>QLHTTTSV_TDTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHTTTSV_TDTDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHTTTSV_TDTDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHTTTSV_TDTDataSet.xss">
+      <DependentUpon>QLHTTTSV_TDTDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHTTTSV_TDT_DataSet.xsc">
+      <DependentUpon>QLHTTTSV_TDT_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHTTTSV_TDT_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHTTTSV_TDT_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHTTTSV_TDT_DataSet.xss">
+      <DependentUpon>QLHTTTSV_TDT_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogoTDTBgWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell-ring.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\scoreboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exam.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coins.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\earth32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mortarboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\time.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\id-card.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MASCOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_edit_24_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil_edit_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{58774928-c677-408e-8a4c-6c3582fedd2c}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{5e6550f6-8480-483b-816e-6f2dc05637af}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
